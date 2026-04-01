@@ -49,6 +49,37 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
+                <h5 class="mb-0">Today's Activities</h5>
+            </div>
+            <div class="card-body">
+                <?php
+                    $todayUpdates = \App\Models\ActivityUpdate::with('activity', 'user')
+                        ->whereDate('created_at', today())
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+                ?>
+                <?php $__empty_1 = true; $__currentLoopData = $todayUpdates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $update): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="mb-2 pb-2 border-bottom">
+                        <small>
+                            <strong><?php echo e($update->activity->title); ?></strong><br>
+                            <?php echo e($update->user->name); ?> - 
+                            <span class="badge <?php if($update->status === 'done'): ?> badge-done <?php else: ?> badge-pending <?php endif; ?>">
+                                <?php echo e($update->status); ?>
+
+                            </span><br>
+                            <span class="text-muted"><?php echo e($update->created_at->format('H:i')); ?></span>
+                        </small>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <p class="text-muted">No activities updated today.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
                 <h5 class="mb-0">Quick Actions</h5>
             </div>
             <div class="card-body">

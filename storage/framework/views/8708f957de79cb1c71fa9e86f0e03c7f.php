@@ -5,16 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $__env->yieldContent('title', 'Activity Tracker'); ?> - nPunto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            height: 100%;
+        }
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             background-color: #f8f9fa;
+            padding-top: 56px;
         }
         .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
         }
+        .container-fluid {
+            flex: 1;
+        }
+        footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
         .sidebar {
-            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 56px;
+            width: 16.66667%;
+            height: calc(100vh - 56px);
             background-color: #212529;
+            overflow-y: auto;
+            padding-top: 1rem;
         }
         .sidebar a {
             color: #a8aaaf;
@@ -36,6 +68,8 @@
         }
         .main-content {
             padding: 2rem;
+            margin-left: 16.66667%;
+            margin-top: 56px;
         }
         .card {
             border: none;
@@ -52,6 +86,9 @@
         }
         .table-hover tbody tr:hover {
             background-color: #f5f5f5;
+        }
+        .welcome-page {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
     </style>
     <?php echo $__env->yieldContent('styles'); ?>

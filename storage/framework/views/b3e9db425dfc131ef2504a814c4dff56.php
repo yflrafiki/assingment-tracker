@@ -39,10 +39,6 @@
                             </li>
                         </ul>
                     </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('login')); ?>">Login</a>
-                    </li>
                 <?php endif; ?>
             </ul>
         </div>
