@@ -1,0 +1,20 @@
+{
+  "name": "npunto",
+  "version": "1.0.0",
+  "description": "A comprehensive Laravel 11 application for tracking daily activities of application support team members with real-time status updates, reporting, and handover management.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yflrafiki/assingment-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yflrafiki/assingment-tracker/issues"
+  },
+  "homepage": "https://github.com/yflrafiki/assingment-tracker#readme"
+}
